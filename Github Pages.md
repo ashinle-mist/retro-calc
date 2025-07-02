@@ -19,7 +19,7 @@ documentation https://docs.gitlab.com/ce/user/project/pages/.
 ## GitLab CI
 
 This project's static Pages are built by [GitLab CI][ci], following the steps
-defined in [`.gitlab-ci.yml`](.gitlab-ci.yml):
+defined in [`.gitlab-ci.yml`](.gitlab-ci.yml.disabled):
 
 ```
 image: busybox
