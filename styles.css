@@ -30,7 +30,14 @@ button {
     display: inline-block;
 }
 
-#display {
+#calculator {
+    max-width: 540px;
+    width: 100%;
+    margin: 70px auto 0;
+}
+
+
+#title {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -39,10 +46,9 @@ button {
     height: 75px;
 }
 
-#calculator {
-    max-width: 540px;
-    width: 100%;
-    margin: 70px auto 0;
+#display {
+    border: 6px solid #000;
+    height: 6rem;
 }
 
 .row {
