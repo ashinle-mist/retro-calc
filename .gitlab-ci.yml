@@ -1,9 +1,10 @@
 pages:
   stage: deploy
   script:
-    - mkdir .public
-    - cp -r * .public
-    - mv .public public
+    - echo "Pipeline is working!"
+    - ls -la
+    - mkdir public
+    - echo "<h1>Hello World</h1>" > public/index.html
   artifacts:
     paths:
       - public
