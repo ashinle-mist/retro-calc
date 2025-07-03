@@ -7,6 +7,29 @@ body {
     font-family: "Jersey 10", sans-serif;
 }
 
+/*Remove default button styling*/
+button {
+    /* Remove all visual styling */
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+
+    /* Remove text styling */
+    font: inherit;
+    color: inherit;
+    text-decoration: none;
+
+    /* Remove browser-specific styling */
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+
+    /* Reset cursor and display */
+    cursor: pointer;
+    display: inline-block;
+}
+
 #display {
     display: flex;
     justify-content: center;
@@ -16,7 +39,7 @@ body {
     height: 75px;
 }
 
-#container {
+#calculator {
     max-width: 540px;
     width: 100%;
     margin: 70px auto 0;
@@ -29,7 +52,7 @@ body {
     margin-block: 20px;
 }
 
-.button {
+.numpad {
     display: flex;
     flex-direction: column;
     justify-content: center;

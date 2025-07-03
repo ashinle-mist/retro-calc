@@ -6,37 +6,37 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div id="container">
+<div id="calculator">
     <p id="display" class="row">Retro Calc</p>
     <div class="row">
-        <div id="clear-all" class="button">AC</div>
-        <div id="brackets" class="button">()</div>
-        <div id="percentage" class="button">%</div>
-        <div id="divide" class="button">÷</div>
+        <button data-action="clear-all" class="numpad">AC</button>
+        <button data-action="brackets" class="numpad">()</button>
+        <button data-action="percentage" class="numpad">%</button>
+        <button data-action="divide" class="numpad">÷</button>
     </div>
     <div class="row">
-        <div class="button">7</div>
-        <div class="button">8</div>
-        <div class="button">9</div>
-        <div id="multiplication" class="button">×</div>
+        <button data-action="number" data-value="7" class="numpad">7</button>
+        <button data-action="number" data-value="8" class="numpad">8</button>
+        <button data-action="number" data-value="9" class="numpad">9</button>
+        <button data-action="multiplication" class="numpad">×</button>
     </div>
     <div class="row">
-        <div class="button">4</div>
-        <div class="button">5</div>
-        <div class="button">6</div>
-        <div id="subtraction" class="button">-</div>
+        <button data-action="number" data-value="4" class="numpad">4</button>
+        <button data-action="number" data-value="5" class="numpad">5</button>
+        <button data-action="number" data-value="6" class="numpad">6</button>
+        <button data-action="subtraction" class="numpad">-</button>
     </div>
     <div class="row">
-        <div class="button">1</div>
-        <div class="button">2</div>
-        <div class="button">3</div>
-        <div id="addition" class="button">+</div>
+        <button data-action="number" data-value="1" class="numpad">1</button>
+        <button data-action="number" data-value="2" class="numpad">2</button>
+        <button data-action="number" data-value="3" class="numpad">3</button>
+        <button data-action="addition" class="numpad">+</button>
     </div>
     <div class="row">
-        <div class="button">0</div>
-        <div class="button">.</div>
-        <div id="clear" class="button">C</div>
-        <div id="equals" class="button">=</div>
+        <button data-action="number" data-value="0" class="numpad">0</button>
+        <button data-action="decimal" class="numpad">.</button>
+        <button data-action="clear" class="numpad">C</button>
+        <button data-action="equals" class="numpad">=</button>
     </div>
 </div>
 </body>
