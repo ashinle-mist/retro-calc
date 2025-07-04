@@ -9,7 +9,7 @@ calculator.addEventListener('click', (e) => {
     const action = numpad.dataset.action;
     const value = numpad.dataset.value;
 
-    // updateDisplay(value)
+    updateDisplay(0)
     handleButtonClick(action, value)
 })
 
