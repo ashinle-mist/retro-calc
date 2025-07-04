@@ -46,7 +46,7 @@ button {
     height: 75px;
 }
 
-#display {
+#current-display {
     display: flex;
     justify-content: right;
     align-items: center;

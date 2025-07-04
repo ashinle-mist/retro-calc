@@ -14,7 +14,7 @@ calculator.addEventListener('click', (e) => {
 })
 
 function updateDisplay(value) {
-    const display = document.getElementById('display')
+    const display = document.getElementById('current-display')
     display.textContent = value || '0';
 }
 
@@ -30,8 +30,10 @@ function handleButtonClick(action, value) {
 }
 
 function addNumber(num) {
-    currentInput += num;
-    updateDisplay(currentInput);
+    if (currentInput.length <= 12) {
+        currentInput += num;
+        updateDisplay(currentInput);
+    }
 }
 
 function clear() {
