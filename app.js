@@ -24,7 +24,7 @@ function handleButtonClick(action, value) {
             addNumber(value);
             break;
         case 'clear':
-            //clear();
+            clear();
             break;
     }
 }
