@@ -24,7 +24,7 @@ function handleButtonClick(action, value) {
             addNumber(value);
             break;
         case 'clear':
-            clear();
+            //clear();
             break;
     }
 }
@@ -32,8 +32,9 @@ function handleButtonClick(action, value) {
 function addNumber(num) {
     if (currentInput.length <= 12) {
         currentInput += num;
-        updateDisplay(currentInput);
     }
+    updateDisplay(currentInput);
+
 }
 
 function clear() {
