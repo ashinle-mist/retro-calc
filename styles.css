@@ -1,8 +1,3 @@
-/*@font-face {*/
-/*    font-family: 'Jersey 10';*/
-/*    src: url("fonts/Jersey10-Regular.ttf") format('truetype');*/
-/*}*/
-
 body {
     font-family: "Jersey 10", sans-serif;
 }
@@ -45,23 +40,24 @@ button {
     padding-inline: 5px;
 }
 
-/*#title {*/
+/*#current-display {*/
 /*    display: flex;*/
-/*    justify-content: center;*/
-/*    flex-direction: column;*/
-/*    text-align: right;*/
-/*    font-size: 3rem;*/
-/*    height: 75px;*/
+/*    justify-content: right;*/
+/*    align-items: center;*/
+/*    border: 6px solid #000;*/
+/*    height: 6rem;*/
+/*    font-size: 5rem;*/
+/*    padding-right: 15px;*/
 /*}*/
 
-#current-display {
+#screen {
     display: flex;
-    justify-content: right;
+    justify-content: space-between;
     align-items: center;
     border: 6px solid #000;
     height: 6rem;
     font-size: 5rem;
-    padding-right: 15px;
+    padding-inline: 15px;
 }
 
 .row {

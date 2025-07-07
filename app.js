@@ -29,6 +29,20 @@ function previousDisplay() {
     previousDisplay.textContent = previousInput || 'Nothing Here...';
 }
 
+function operatorDisplay() {
+    const operatorDisplay = document.getElementById('operator-display')
+    switch (operator) {
+        case '*':
+            operatorDisplay.textContent = '×' || '';
+            break;
+        case '/':
+            operatorDisplay.textContent = '÷' || '';
+            break;
+        default:
+            operatorDisplay.textContent = operator || '';
+    }
+}
+
 function handleButtonClick(action, value) {
     switch (action) {
         case 'number':
@@ -43,6 +57,7 @@ function handleButtonClick(action, value) {
         case 'operator':
             arithmetic();
             operator = value;
+            operatorDisplay();
             break;
         case 'equals':
             equals();
@@ -56,12 +71,14 @@ function addNumber(num) {
     }
     updateDisplay(displayedInput);
     currentInput = parseInt(displayedInput);
-    console.log(currentInput);
+    console.log("Current input = " + currentInput);
 }
 
 function clear() {
     currentInput = 0;
     displayedInput = '';
+    operator = null;
+    operatorDisplay();
     updateDisplay();
 }
 
@@ -85,6 +102,7 @@ function equals() {
     currentInput = result;
     previousInput = result;
     operator = null;
+    operatorDisplay();
     updateDisplay();
     previousDisplay();
 }
