@@ -35,6 +35,9 @@ function handleButtonClick(action, value) {
         case 'clear':
             clear();
             break;
+        case 'clear-all':
+            clearAll();
+            break;
         case 'addition':
             addition();
             break;
@@ -51,6 +54,13 @@ function addNumber(num) {
 function clear() {
     currentInput = '';
     updateDisplay(0);
+}
+
+function clearAll() {
+    currentInput = '';
+    previousInput = '';
+    updateDisplay(0);
+    previousDisplay();
 }
 
 function addition() {
