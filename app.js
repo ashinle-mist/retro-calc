@@ -12,7 +12,7 @@ calculator.addEventListener('click', (e) => {
 })
 
 let displayedInput = '';
-let operator = '';
+let operator;
 let currentInput = 0;
 let previousInput = 0;
 
@@ -42,15 +42,19 @@ function handleButtonClick(action, value) {
             break;
         case 'addition':
             addition();
+            operator = value;
             break;
         case 'subtraction':
             subtraction();
+            operator = value;
             break;
         case 'multiplication':
             multiplication();
+            operator = value;
             break;
         case 'division':
             division();
+            operator = value;
             break;
         case 'equals':
             equals();
@@ -81,51 +85,31 @@ function clearAll() {
 
 function addition() {
     previousInput = currentInput;
-    operator = 'addition'
     previousDisplay();
     clear();
 }
 
 function subtraction() {
     previousInput = currentInput;
-    operator = 'subtraction'
     previousDisplay();
     clear();
 }
 
 function multiplication() {
     previousInput = currentInput;
-    operator = 'multiplication'
     previousDisplay();
     clear();
 }
 
 function division() {
     previousInput = currentInput;
-    operator = 'division'
     previousDisplay();
     clear();
 }
 
 function equals() {
-    let result;
 
-    switch (operator) {
-        case 'addition':
-            result = previousInput + currentInput;
-            break;
-        case 'subtraction':
-            result = previousInput - currentInput;
-            break;
-        case 'multiplication':
-            result = previousInput * currentInput;
-            break;
-        case 'division':
-            result = previousInput / currentInput;
-            break;
-        default:
-            return;
-    }
+    let result = eval(`${previousInput} ${operator} ${currentInput}`);
 
     displayedInput = result.toString();
     currentInput = result;
