@@ -24,7 +24,7 @@ function updateDisplay(value) {
 
 function previousDisplay() {
     const previousDisplay = document.getElementById('previous-display')
-    previousDisplay.textContent = previousInput;
+    previousDisplay.textContent = previousInput || 'Nothing Here...';
 }
 
 function handleButtonClick(action, value) {

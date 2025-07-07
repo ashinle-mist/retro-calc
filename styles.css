@@ -3,12 +3,6 @@
 /*    src: url("fonts/Jersey10-Regular.ttf") format('truetype');*/
 /*}*/
 
-.jersey-10-regular {
-    font-family: "Jersey 10", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
 body {
     font-family: "Jersey 10", sans-serif;
 }
@@ -42,15 +36,23 @@ button {
     margin: 70px auto 0;
 }
 
-
-#title {
+#second-display {
     display: flex;
-    justify-content: center;
-    flex-direction: column;
-    text-align: right;
+    flex-direction: row;
+    justify-content: space-between;
     font-size: 3rem;
-    height: 75px;
+    margin-block: 20px;
+    padding-inline: 5px;
 }
+
+/*#title {*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    flex-direction: column;*/
+/*    text-align: right;*/
+/*    font-size: 3rem;*/
+/*    height: 75px;*/
+/*}*/
 
 #current-display {
     display: flex;
