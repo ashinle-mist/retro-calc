@@ -12,7 +12,7 @@ calculator.addEventListener('click', (e) => {
 })
 
 let displayedInput = '';
-let operator;
+let operator = null;
 let currentInput = 0;
 let previousInput = 0;
 
@@ -40,20 +40,8 @@ function handleButtonClick(action, value) {
         case 'clear-all':
             clearAll();
             break;
-        case 'addition':
-            addition();
-            operator = value;
-            break;
-        case 'subtraction':
-            subtraction();
-            operator = value;
-            break;
-        case 'multiplication':
-            multiplication();
-            operator = value;
-            break;
-        case 'division':
-            division();
+        case 'operator':
+            arithmetic();
             operator = value;
             break;
         case 'equals':
@@ -83,25 +71,7 @@ function clearAll() {
     previousDisplay();
 }
 
-function addition() {
-    previousInput = currentInput;
-    previousDisplay();
-    clear();
-}
-
-function subtraction() {
-    previousInput = currentInput;
-    previousDisplay();
-    clear();
-}
-
-function multiplication() {
-    previousInput = currentInput;
-    previousDisplay();
-    clear();
-}
-
-function division() {
+function arithmetic() {
     previousInput = currentInput;
     previousDisplay();
     clear();
@@ -114,7 +84,7 @@ function equals() {
     displayedInput = result.toString();
     currentInput = result;
     previousInput = result;
-    operator = '';
+    operator = null;
     updateDisplay();
     previousDisplay();
 }
