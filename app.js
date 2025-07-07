@@ -1,5 +1,10 @@
 const calculator = document.getElementById('calculator')
+
 let currentInput = '';
+let previousInput = '';
+
+updateDisplay();
+previousDisplay();
 
 calculator.addEventListener('click', (e) => {
     const numpad = e.target;
@@ -9,13 +14,17 @@ calculator.addEventListener('click', (e) => {
     const action = numpad.dataset.action;
     const value = numpad.dataset.value;
 
-    updateDisplay(0)
     handleButtonClick(action, value)
 })
 
 function updateDisplay(value) {
     const display = document.getElementById('current-display')
     display.textContent = value || '0';
+}
+
+function previousDisplay() {
+    const previousDisplay = document.getElementById('previous-display')
+    previousDisplay.textContent = previousInput;
 }
 
 function handleButtonClick(action, value) {
@@ -26,6 +35,9 @@ function handleButtonClick(action, value) {
         case 'clear':
             clear();
             break;
+        case 'addition':
+            addition();
+            break;
     }
 }
 
@@ -34,7 +46,6 @@ function addNumber(num) {
         currentInput += num;
     }
     updateDisplay(currentInput);
-
 }
 
 function clear() {
@@ -42,3 +53,7 @@ function clear() {
     updateDisplay(0);
 }
 
+function addition() {
+    previousInput = currentInput;
+    previousDisplay();
+}
