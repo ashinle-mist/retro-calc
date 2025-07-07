@@ -48,6 +48,9 @@ function handleButtonClick(action, value) {
         case 'number':
             addNumber(value);
             break;
+        case 'decimal':
+            addDecimal();
+            break;
         case 'clear':
             clear();
             break;
@@ -70,7 +73,21 @@ function addNumber(num) {
         displayedInput += num;
     }
     updateDisplay(displayedInput);
-    currentInput = parseInt(displayedInput);
+    currentInput = parseFloat(displayedInput);
+    console.log("Current input = " + currentInput);
+}
+
+function addDecimal() {
+    if (displayedInput.includes('.')) {
+        return;
+    } else if (displayedInput === '') {
+        displayedInput = '0.';
+    } else {
+        displayedInput += '.';
+    }
+
+    updateDisplay(displayedInput);
+    currentInput = parseFloat(displayedInput);
     console.log("Current input = " + currentInput);
 }
 
@@ -97,8 +114,9 @@ function arithmetic() {
 function equals() {
 
     let result = eval(`${previousInput} ${operator} ${currentInput}`);
+    // result.toPrecision(12);
 
-    displayedInput = result.toString();
+    displayedInput = result.toPrecision(12).toString();
     currentInput = result;
     previousInput = result;
     operator = null;
