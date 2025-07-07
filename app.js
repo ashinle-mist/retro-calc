@@ -1,11 +1,5 @@
 const calculator = document.getElementById('calculator')
 
-let currentInput = '';
-let previousInput = '';
-
-updateDisplay();
-previousDisplay();
-
 calculator.addEventListener('click', (e) => {
     const numpad = e.target;
 
@@ -17,9 +11,17 @@ calculator.addEventListener('click', (e) => {
     handleButtonClick(action, value)
 })
 
-function updateDisplay(value) {
+let displayedInput = '';
+let operator = '';
+let currentInput = 0;
+let previousInput = 0;
+
+updateDisplay();
+previousDisplay();
+
+function updateDisplay() {
     const display = document.getElementById('current-display')
-    display.textContent = value || '0';
+    display.textContent = displayedInput || '0';
 }
 
 function previousDisplay() {
@@ -41,29 +43,94 @@ function handleButtonClick(action, value) {
         case 'addition':
             addition();
             break;
+        case 'subtraction':
+            subtraction();
+            break;
+        case 'multiplication':
+            multiplication();
+            break;
+        case 'division':
+            division();
+            break;
+        case 'equals':
+            equals();
+            break;
     }
 }
 
 function addNumber(num) {
-    if (currentInput.length <= 12) {
-        currentInput += num;
+    if (displayedInput.length <= 12) {
+        displayedInput += num;
     }
-    updateDisplay(currentInput);
+    updateDisplay(displayedInput);
+    currentInput = parseInt(displayedInput);
+    console.log(currentInput);
 }
 
 function clear() {
-    currentInput = '';
-    updateDisplay(0);
+    currentInput = 0;
+    displayedInput = '';
+    updateDisplay();
 }
 
 function clearAll() {
-    currentInput = '';
-    previousInput = '';
-    updateDisplay(0);
+    clear();
+    previousInput = 0;
     previousDisplay();
 }
 
 function addition() {
     previousInput = currentInput;
+    operator = 'addition'
+    previousDisplay();
+    clear();
+}
+
+function subtraction() {
+    previousInput = currentInput;
+    operator = 'subtraction'
+    previousDisplay();
+    clear();
+}
+
+function multiplication() {
+    previousInput = currentInput;
+    operator = 'multiplication'
+    previousDisplay();
+    clear();
+}
+
+function division() {
+    previousInput = currentInput;
+    operator = 'division'
+    previousDisplay();
+    clear();
+}
+
+function equals() {
+    let result;
+
+    switch (operator) {
+        case 'addition':
+            result = previousInput + currentInput;
+            break;
+        case 'subtraction':
+            result = previousInput - currentInput;
+            break;
+        case 'multiplication':
+            result = previousInput * currentInput;
+            break;
+        case 'division':
+            result = previousInput / currentInput;
+            break;
+        default:
+            return;
+    }
+
+    displayedInput = result.toString();
+    currentInput = result;
+    previousInput = result;
+    operator = '';
+    updateDisplay();
     previousDisplay();
 }
