@@ -26,7 +26,7 @@ function updateDisplay() {
 
 function previousDisplay() {
     const previousDisplay = document.getElementById('previous-display')
-    previousDisplay.textContent = previousInput || 'Nothing Here...';
+    previousDisplay.textContent = previousInput || '0';
 }
 
 function operatorDisplay() {
@@ -69,6 +69,7 @@ function handleButtonClick(action, value) {
 }
 
 function addNumber(num) {
+
     if (displayedInput.length <= 12) {
         displayedInput += num;
     }
@@ -106,8 +107,14 @@ function clearAll() {
 }
 
 function arithmetic() {
-    previousInput = currentInput;
-    previousDisplay();
+    if (operator !== null && displayedInput !== '') {
+        equals();
+    }
+
+    if (displayedInput !== '') {
+        previousInput = currentInput;
+        previousDisplay();
+    }
     clear();
 }
 
@@ -116,7 +123,7 @@ function equals() {
     let result = eval(`${previousInput} ${operator} ${currentInput}`);
     // result.toPrecision(12);
 
-    displayedInput = result.toPrecision(12).toString();
+    displayedInput = result.toString();
     currentInput = result;
     previousInput = result;
     operator = null;

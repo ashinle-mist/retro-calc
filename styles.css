@@ -1,5 +1,18 @@
+:root {
+    --font-xs: 1.5rem;
+    --font-s: 3rem;
+    --font-m: 3.5rem;
+    --font-l: 5rem;
+
+    --border-weight: 6px;
+    --border-color: #000000;
+
+    --text-color: #000000;
+}
+
 body {
     font-family: "Jersey 10", sans-serif;
+    color: var(--text-color);
 }
 
 /*Remove default button styling*/
@@ -31,33 +44,23 @@ button {
     margin: 70px auto 0;
 }
 
-#second-display {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    font-size: 3rem;
-    margin-block: 20px;
-    padding-inline: 5px;
-}
-
-/*#current-display {*/
-/*    display: flex;*/
-/*    justify-content: right;*/
-/*    align-items: center;*/
-/*    border: 6px solid #000;*/
-/*    height: 6rem;*/
-/*    font-size: 5rem;*/
-/*    padding-right: 15px;*/
-/*}*/
-
 #screen {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 6px solid #000;
+    border: var(--border-weight) solid var(--border-color);
     height: 6rem;
-    font-size: 5rem;
+    font-size: var(--font-l);
     padding-inline: 15px;
+}
+
+#second-display {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: var(--font-s);
+    margin-block: 20px;
+    padding-inline: 5px;
 }
 
 .row {
@@ -68,18 +71,15 @@ button {
 }
 
 .numpad {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     text-align: center;
     width: 110px;
     height: 90px;
-    border: 6px solid #000;
-    font-size: 3.5rem;
+    border: var(--border-weight) solid var(--border-color);
+    font-size: var(--font-m);
 }
 
 footer {
     margin-top: 40px;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: var(--font-xs);
 }
