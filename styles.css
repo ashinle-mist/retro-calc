@@ -1,4 +1,6 @@
 :root {
+    box-sizing: border-box;
+
     --font-xs: 1.5rem;
     --font-s: 3rem;
     --font-m: 3.5rem;

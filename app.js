@@ -155,9 +155,11 @@ function arithmetic() {
 
 function equals(prev, op, curr) {
 
-    prev = previousInput;
+    //Comment these 3 lines below to use the equals function by itself
     op = operator;
+    prev = previousInput;
     curr = currentInput;
+
     let result = 0;
 
     switch (op) {
@@ -174,10 +176,9 @@ function equals(prev, op, curr) {
             result = prev / curr;
             break;
         default:
-            throw new Error('No valid operator');
+            console.error('No valid operator');
     }
 
-    // let result = eval(`${previousInput} ${operator} ${currentInput}`);
     result = parseFloat(result.toPrecision(12));
     console.log(result);
 
@@ -189,4 +190,6 @@ function equals(prev, op, curr) {
     operatorDisplay();
     updateDisplay();
     previousDisplay();
+
+    return result;
 }
