@@ -8,6 +8,8 @@ calculator.addEventListener('click', (m) => {
     const action = numpad.dataset.action;
     const value = numpad.dataset.value;
 
+    console.log("Clicked: ", {numpad, action, value})
+
     handleButtonClick(action, value)
 })
 
