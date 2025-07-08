@@ -154,7 +154,8 @@ function arithmetic() {
 function equals() {
 
     let result = eval(`${previousInput} ${operator} ${currentInput}`);
-    // result.toPrecision(12);
+    result = parseFloat(result.toPrecision(12));
+    console.log(result);
 
     displayedInput = result.toString();
     currentInput = result;
