@@ -190,6 +190,9 @@ function equals(prev, op, curr) {
         case '%':
             result = (prev/100) * curr;
             break;
+        case '':
+            result = curr;
+            break;
         default:
             console.error('No valid operator');
     }
