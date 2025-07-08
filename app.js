@@ -1,7 +1,7 @@
 const calculator = document.getElementById('calculator')
 
-calculator.addEventListener('click', (e) => {
-    const numpad = e.target;
+calculator.addEventListener('click', (m) => {
+    const numpad = m.target;
 
     if (!numpad.matches('.numpad')) return;
 
@@ -9,6 +9,40 @@ calculator.addEventListener('click', (e) => {
     const value = numpad.dataset.value;
 
     handleButtonClick(action, value)
+})
+
+document.addEventListener('keydown', (k) => {
+    const key = k.key;
+
+    if (key >= 0 && key <= 9) {
+        addNumber(key);
+    }
+    console.log("Keypress: " + key)
+
+    switch (key) {
+        case 'Backspace':
+            clear()
+            break;
+        case 'Delete':
+            clearAll();
+            break;
+        case '+':
+        case '-':
+        case '*':
+        case 'x':
+        case 'X':
+        case '/':
+            arithmetic()
+            operator = key;
+            operatorDisplay();
+            break;
+        case '.':
+            addDecimal();
+            break;
+        case 'Enter':
+            equals();
+            break;
+    }
 })
 
 let displayedInput = '';
@@ -75,7 +109,6 @@ function addNumber(num) {
     }
     updateDisplay(displayedInput);
     currentInput = parseFloat(displayedInput);
-    console.log("Current input = " + currentInput);
 }
 
 function addDecimal() {
