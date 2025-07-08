@@ -43,6 +43,8 @@ document.addEventListener('keydown', (k) => {
         case 'x':
         case 'X':
         case '/':
+        case '^':
+        case '%':
             arithmetic()
             operator = key;
             operatorDisplay();
@@ -165,6 +167,8 @@ function equals(prev, op, curr) {
     prev = previousInput;
     curr = currentInput;
 
+    console.log("Values: ", {prev, op, curr});
+
     let result = 0;
 
     switch (op) {
@@ -182,6 +186,9 @@ function equals(prev, op, curr) {
             break;
         case '/':
             result = prev / curr;
+            break;
+        case '%':
+            result = (prev/100) * curr;
             break;
         default:
             console.error('No valid operator');
