@@ -1,5 +1,14 @@
 const calculator = document.getElementById('calculator')
 
+let displayedInput = '';
+let operator = null;
+let currentInput = 0;
+let previousInput = 0;
+
+operatorDisplay();
+updateDisplay();
+previousDisplay();
+
 calculator.addEventListener('click', (m) => {
     const numpad = m.target;
 
@@ -47,14 +56,6 @@ document.addEventListener('keydown', (k) => {
     }
 })
 
-let displayedInput = '';
-let operator = null;
-let currentInput = 0;
-let previousInput = 0;
-
-updateDisplay();
-previousDisplay();
-
 function updateDisplay() {
     const display = document.getElementById('current-display')
     display.textContent = displayedInput || '0';
@@ -70,6 +71,9 @@ function operatorDisplay() {
     switch (operator) {
         case '*':
             operatorDisplay.textContent = '×' || '';
+            break;
+        case '**':
+            operatorDisplay.textContent = '^' || '';
             break;
         case '/':
             operatorDisplay.textContent = '÷' || '';
@@ -122,15 +126,16 @@ function addDecimal() {
         displayedInput += '.';
     }
 
-    updateDisplay(displayedInput);
     currentInput = parseFloat(displayedInput);
+    updateDisplay(displayedInput);
     console.log("Current input = " + currentInput);
 }
 
 function clear() {
-    currentInput = 0;
     displayedInput = '';
     operator = null;
+    currentInput = 0;
+
     operatorDisplay();
     updateDisplay();
 }
@@ -172,6 +177,9 @@ function equals(prev, op, curr) {
         case '*':
             result = prev * curr;
             break;
+        case '**':
+            result = prev ** curr;
+            break;
         case '/':
             result = prev / curr;
             break;
@@ -184,9 +192,10 @@ function equals(prev, op, curr) {
 
     //Update statements
     displayedInput = result.toString();
+    operator = '';
     currentInput = result;
     previousInput = result;
-    operator = null;
+
     operatorDisplay();
     updateDisplay();
     previousDisplay();
