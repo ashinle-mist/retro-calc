@@ -151,12 +151,35 @@ function arithmetic() {
     clear();
 }
 
-function equals() {
+function equals(prev, op, curr) {
 
-    let result = eval(`${previousInput} ${operator} ${currentInput}`);
+    prev = previousInput;
+    op = operator;
+    curr = currentInput;
+    let result = 0;
+
+    switch (op) {
+        case '+':
+            result = prev + curr;
+            break;
+        case '-':
+            result = prev - curr;
+            break;
+        case '*':
+            result = prev * curr;
+            break;
+        case '/':
+            result = prev / curr;
+            break;
+        default:
+            throw new Error('No valid operator');
+    }
+
+    // let result = eval(`${previousInput} ${operator} ${currentInput}`);
     result = parseFloat(result.toPrecision(12));
     console.log(result);
 
+    //Update statements
     displayedInput = result.toString();
     currentInput = result;
     previousInput = result;
