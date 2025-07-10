@@ -1,6 +1,4 @@
 :root {
-    box-sizing: border-box;
-
     --font-xs: 1.5rem;
     --font-s: 3rem;
     --font-m: 3.5rem;
@@ -10,6 +8,10 @@
     --border-color: #000000;
 
     --text-color: #000000;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 body {
@@ -79,6 +81,13 @@ button {
     border: var(--border-weight) solid var(--border-color);
     font-size: var(--font-m);
 }
+
+.numpad:active {
+    background-color: #000000;
+    color: #ffffff;
+    transform: scale(0.95);
+}
+
 
 footer {
     margin-top: 40px;
