@@ -80,9 +80,16 @@ button {
     height: 90px;
     border: var(--border-weight) solid var(--border-color);
     font-size: var(--font-m);
+    touch-action: manipulation;
+    transition: all 0.1s ease;
 }
 
-.numpad:active {
+.numpad:hover {
+    background-color: #f2f2f2;
+    transition: all 0.1s ease;
+}
+
+.numpad:active, .numpad.keypressed {
     background-color: #000000;
     color: #ffffff;
     transform: scale(0.95);
