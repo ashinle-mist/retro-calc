@@ -25,27 +25,27 @@ body {
 }
 
 /*Remove default button styling*/
-button {
-    /* Remove all visual styling */
-    background: none;
-    border: none;
-    padding: 0;
-    margin: 0;
+/*button {*/
+/*    !* Remove all visual styling *!*/
+/*    background: none;*/
+/*    border: none;*/
+/*    padding: 0;*/
+/*    margin: 0;*/
 
-    /* Remove text styling */
-    font: inherit;
-    color: inherit;
-    text-decoration: none;
+/*    !* Remove text styling *!*/
+/*    font: inherit;*/
+/*    color: inherit;*/
+/*    text-decoration: none;*/
 
-    /* Remove browser-specific styling */
-    outline: none;
-    -webkit-appearance: none;
-    appearance: none;
+/*    !* Remove browser-specific styling *!*/
+/*    outline: none;*/
+/*    -webkit-appearance: none;*/
+/*    appearance: none;*/
 
-    /* Reset cursor and display */
-    cursor: pointer;
-    display: inline-block;
-}
+/*    !* Reset cursor and display *!*/
+/*    cursor: pointer;*/
+/*    display: inline-block;*/
+/*}*/
 
 #calculator {
     max-width: 540px;
