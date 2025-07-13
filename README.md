@@ -1,7 +1,7 @@
 # Retro Calc
-A simple vanilla JS calculator with a retro-ish theme. Try it out here: 
+A simple vanilla JS calculator with a retro-ish theme. 
 
-https://retro-ca0889.gitlab.io/
+Try it out here: https://retro-ca0889.gitlab.io/
 
 # Usage
 Enter your number and select an operator. This will transfer your number to memory, after which you can type another number and continue your operation. Numbers are calculated up to 12 significant figures.
