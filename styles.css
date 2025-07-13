@@ -8,6 +8,11 @@
     --border-color: #000000;
 
     --text-color: #000000;
+    --button-bg: #ffffff;
+    --button-bg-hover: #f2f2f2;
+
+    --button-pressed-bg: #000000;
+    --button-pressed-text: #ffffff;
 }
 
 * {
@@ -80,18 +85,17 @@ button {
     height: 90px;
     border: var(--border-weight) solid var(--border-color);
     font-size: var(--font-m);
-    touch-action: manipulation;
     transition: all 0.1s ease;
 }
 
 .numpad:hover {
-    background-color: #f2f2f2;
+    background-color: var(--button-bg-hover);
     transition: all 0.1s ease;
 }
 
 .numpad:active {
-    background-color: #000000;
-    color: #ffffff;
+    background-color: var(--button-pressed-bg);
+    color: var(--button-pressed-text);
     transform: scale(0.95);
 }
 
