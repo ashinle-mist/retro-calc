@@ -89,12 +89,11 @@ button {
     transition: all 0.1s ease;
 }
 
-.numpad:active, .numpad.keypressed {
+.numpad:active {
     background-color: #000000;
     color: #ffffff;
     transform: scale(0.95);
 }
-
 
 footer {
     margin-top: 40px;
