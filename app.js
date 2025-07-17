@@ -5,6 +5,35 @@ let operator = null;
 let currentInput = 0;
 let previousInput = 0;
 
+function updateDisplay() {
+    const display = document.getElementById('current-display')
+    display.textContent = displayedInput || '0';
+}
+
+function previousDisplay() {
+    const previousDisplay = document.getElementById('previous-display')
+    previousDisplay.textContent = previousInput || '0';
+}
+
+function operatorDisplay() {
+    const operatorDisplay = document.getElementById('operator-display')
+    switch (operator) {
+        case '*':
+        case 'x':
+        case 'X':
+            operatorDisplay.textContent = '×' || '';
+            break;
+        case '**':
+            operatorDisplay.textContent = '^' || '';
+            break;
+        case '/':
+            operatorDisplay.textContent = '÷' || '';
+            break;
+        default:
+            operatorDisplay.textContent = operator || '';
+    }
+}
+
 operatorDisplay();
 updateDisplay();
 previousDisplay();
@@ -19,7 +48,28 @@ calculator.addEventListener('click', (m) => {
 
     console.log("Clicked: ", {numpad, action, value})
 
-    handleButtonClick(action, value)
+    switch (action) {
+        case 'number':
+            addNumber(value);
+            break;
+        case 'decimal':
+            addDecimal();
+            break;
+        case 'clear':
+            clear();
+            break;
+        case 'clear-all':
+            clearAll();
+            break;
+        case 'operator':
+            arithmetic();
+            operator = value;
+            operatorDisplay();
+            break;
+        case 'equals':
+            equals();
+            break;
+    }
 })
 
 document.addEventListener('keydown', (k) => {
@@ -57,60 +107,6 @@ document.addEventListener('keydown', (k) => {
             break;
     }
 })
-
-function updateDisplay() {
-    const display = document.getElementById('current-display')
-    display.textContent = displayedInput || '0';
-}
-
-function previousDisplay() {
-    const previousDisplay = document.getElementById('previous-display')
-    previousDisplay.textContent = previousInput || '0';
-}
-
-function operatorDisplay() {
-    const operatorDisplay = document.getElementById('operator-display')
-    switch (operator) {
-        case '*':
-        case 'x':
-        case 'X':
-            operatorDisplay.textContent = '×' || '';
-            break;
-        case '**':
-            operatorDisplay.textContent = '^' || '';
-            break;
-        case '/':
-            operatorDisplay.textContent = '÷' || '';
-            break;
-        default:
-            operatorDisplay.textContent = operator || '';
-    }
-}
-
-function handleButtonClick(action, value) {
-    switch (action) {
-        case 'number':
-            addNumber(value);
-            break;
-        case 'decimal':
-            addDecimal();
-            break;
-        case 'clear':
-            clear();
-            break;
-        case 'clear-all':
-            clearAll();
-            break;
-        case 'operator':
-            arithmetic();
-            operator = value;
-            operatorDisplay();
-            break;
-        case 'equals':
-            equals();
-            break;
-    }
-}
 
 function addNumber(num) {
 
