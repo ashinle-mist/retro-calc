@@ -64,6 +64,9 @@ calculator.addEventListener('click', (m) => {
             operator = value;
             operatorDisplay();
             break;
+        case 'paste':
+            paste();
+            break;
         case 'equals':
             equals();
             break;
@@ -147,6 +150,18 @@ function arithmetic() {
         previousDisplay();
     }
     clear();
+}
+
+async function paste() {
+    if (navigator.clipboard && navigator.clipboard.readText) {
+        try {
+            const pastedNum = await navigator.clipboard.readText();
+            console.log(pastedNum);
+            addNumber(pastedNum);
+        } catch (e) {
+            console.error(e);
+        }
+    }
 }
 
 function equals(prev, op, curr) {

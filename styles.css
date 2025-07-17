@@ -48,9 +48,10 @@ button {
 }
 
 #calculator {
-    max-width: 540px;
-    width: 100%;
-    margin: 70px auto 0;
+    max-width: 560px;
+    /*width: 100%;*/
+    margin: 70px auto 0;;
+    /*margin-inline: 40px;*/
 }
 
 #screen {
@@ -58,6 +59,7 @@ button {
     justify-content: space-between;
     align-items: center;
     border: var(--border-weight) solid var(--border-color);
+    margin: 15px;
     height: 6rem;
     font-size: var(--font-l);
     padding-inline: 15px;
@@ -67,6 +69,7 @@ button {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin: 15px;
     font-size: var(--font-s);
     margin-block: 20px;
     padding-inline: 5px;
@@ -85,7 +88,8 @@ button {
     /*height: 90px;*/
     width: 100%;
     height: 6rem;
-    margin: 10px;
+    margin-block: 10px;
+    margin-inline: 15px;
     border: var(--border-weight) solid var(--border-color);
     font-size: var(--font-m);
     transition: all 0.1s ease;
