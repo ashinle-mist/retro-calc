@@ -72,6 +72,8 @@ function operatorDisplay() {
     const operatorDisplay = document.getElementById('operator-display')
     switch (operator) {
         case '*':
+        case 'x':
+        case 'X':
             operatorDisplay.textContent = '×' || '';
             break;
         case '**':
@@ -188,7 +190,7 @@ function equals(prev, op, curr) {
             result = prev / curr;
             break;
         case '%':
-            result = (prev/100) * curr;
+            result = (prev / 100) * curr;
             break;
         case '':
             result = curr;
