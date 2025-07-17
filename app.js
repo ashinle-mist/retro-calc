@@ -72,7 +72,8 @@ function operatorDisplay() {
     const operatorDisplay = document.getElementById('operator-display')
     switch (operator) {
         case '*':
-            operatorDisplay.textContent = '×' || '';
+        case
+            operatorDisplay.textContent = '×' || '':
             break;
         case '**':
             operatorDisplay.textContent = '^' || '';
