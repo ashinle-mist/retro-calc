@@ -18,9 +18,7 @@ function previousDisplay() {
 function operatorDisplay() {
     const operatorDisplay = document.getElementById('operator-display')
     switch (operator) {
-        case '*':
-        case 'x':
-        case 'X':
+        case '*': case 'x': case 'X':
             operatorDisplay.textContent = '×' || '';
             break;
         case '**':
@@ -87,14 +85,7 @@ document.addEventListener('keydown', (k) => {
         case 'Delete':
             clearAll();
             break;
-        case '+':
-        case '-':
-        case '*':
-        case 'x':
-        case 'X':
-        case '/':
-        case '^':
-        case '%':
+        case '+': case '-': case '*': case 'x': case 'X': case '/': case '^': case '%':
             arithmetic()
             operator = key;
             operatorDisplay();
