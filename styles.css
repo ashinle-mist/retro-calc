@@ -76,13 +76,16 @@ button {
     display: flex;
     justify-content: space-between;
     align-content: center;
-    margin-block: 20px;
+    /*margin-block: 20px;*/
 }
 
 .numpad {
     text-align: center;
-    width: 110px;
-    height: 90px;
+    /*width: 110px;*/
+    /*height: 90px;*/
+    width: 100%;
+    height: 6rem;
+    margin: 10px;
     border: var(--border-weight) solid var(--border-color);
     font-size: var(--font-m);
     transition: all 0.1s ease;
