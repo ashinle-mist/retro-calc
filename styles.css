@@ -1,10 +1,9 @@
 :root {
-    --font-xs: 1.5rem;
     --font-s: 3rem;
-    --font-m: 3.5rem;
-    --font-l: 5rem;
+    --font-m: 5rem;
+    --font-l: 7rem;
 
-    --border-weight: 6px;
+    --border-weight: 9px;
     --border-color: #000000;
 
     --text-color: #000000;
@@ -13,6 +12,11 @@
 
     --button-pressed-bg: #000000;
     --button-pressed-text: #ffffff;
+
+    --spacing-horizontal: 15px;
+    --spacing-vertical: 20px;
+
+    --animation-speed: all 0.1s ease;
 }
 
 * {
@@ -26,21 +30,11 @@ body {
 
 /*Remove default button styling*/
 button {
-    /* Remove all visual styling */
     background: none;
-    border: none;
-    padding: 0;
-    margin: 0;
 
-    /* Remove text styling */
     font: inherit;
     color: inherit;
     text-decoration: none;
-
-    /* Remove browser-specific styling */
-    outline: none;
-    -webkit-appearance: none;
-    appearance: none;
 
     /* Reset cursor and display */
     cursor: pointer;
@@ -48,10 +42,12 @@ button {
 }
 
 #calculator {
-    max-width: 560px;
-    /*width: 100%;*/
-    margin: 70px auto 0;;
-    /*margin-inline: 40px;*/
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding-inline: 50px;
+    padding-block: 60px;
+    margin-inline: auto;
 }
 
 #screen {
@@ -59,19 +55,19 @@ button {
     justify-content: space-between;
     align-items: center;
     border: var(--border-weight) solid var(--border-color);
-    margin: 15px;
-    height: 6rem;
+    margin: var(--spacing-horizontal);
+    height: 1.3em;
     font-size: var(--font-l);
-    padding-inline: 15px;
+    padding-inline: var(--spacing-horizontal);
 }
 
 #second-display {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 15px;
-    font-size: var(--font-s);
-    margin-block: 20px;
+    margin: var(--spacing-horizontal);
+    font-size: var(--font-m);
+    margin-block: var(--spacing-vertical);
     padding-inline: 5px;
 }
 
@@ -79,25 +75,23 @@ button {
     display: flex;
     justify-content: space-between;
     align-content: center;
-    /*margin-block: 20px;*/
 }
 
 .numpad {
+    flex: 1 1 150px;
     text-align: center;
-    /*width: 110px;*/
-    /*height: 90px;*/
-    width: 100%;
-    height: 6rem;
-    margin-block: 10px;
-    margin-inline: 15px;
+    min-width: 110px;
+    min-height: 150px;
+    margin-block: var(--spacing-vertical);
+    margin-inline: var(--spacing-horizontal);
     border: var(--border-weight) solid var(--border-color);
     font-size: var(--font-m);
-    transition: all 0.1s ease;
+    transition: var(--animation-speed);
 }
 
 .numpad:hover {
     background-color: var(--button-bg-hover);
-    transition: all 0.1s ease;
+    transition: var(--animation-speed);
 }
 
 .numpad:active {
@@ -107,7 +101,7 @@ button {
 }
 
 footer {
-    margin-top: 40px;
+    margin-block: var(--spacing-vertical);
     text-align: center;
-    font-size: var(--font-xs);
+    font-size: var(--font-s);
 }
