@@ -155,9 +155,16 @@ function arithmetic() {
 async function paste() {
     if (navigator.clipboard && navigator.clipboard.readText) {
         try {
-            const pastedNum = await navigator.clipboard.readText();
-            console.log(pastedNum);
-            addNumber(pastedNum);
+            const clipboardText = await navigator.clipboard.readText();
+            const pastedNum = clipboardText.trim()
+            
+            if (isNaN(pastedNum)) {
+                alert(`"${pastedNum}" is not a valid number`);
+                return null;
+            } else {
+                console.log(pastedNum);
+                addNumber(pastedNum);
+            }
         } catch (e) {
             console.error(e);
         }
