@@ -13,8 +13,8 @@
     --button-pressed-bg: #000000;
     --button-pressed-text: #ffffff;
 
-    --spacing-horizontal: 15px;
-    --spacing-vertical: 20px;
+    --spacing-horizontal: 1rem;
+    --spacing-vertical: 1.5rem;
 
     --animation-speed: all 0.1s ease;
 }
@@ -26,6 +26,7 @@
 body {
     font-family: "Jersey 10", sans-serif;
     color: var(--text-color);
+    touch-action: manipulation;
 }
 
 /*Remove default button styling*/
@@ -44,11 +45,9 @@ button {
 #calculator {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     padding-inline: 50px;
     padding-block: 60px;
     margin-inline: auto;
-    touch-action: manipulation;
 }
 
 #screen {
@@ -79,10 +78,9 @@ button {
 }
 
 .numpad {
-    flex: 1 1 150px;
+    flex: 1 1 100%;
+    height: 2em;
     text-align: center;
-    min-width: 110px;
-    min-height: 150px;
     margin-block: var(--spacing-vertical);
     margin-inline: var(--spacing-horizontal);
     border: var(--border-weight) solid var(--border-color);
@@ -105,4 +103,20 @@ footer {
     margin-block: var(--spacing-vertical);
     text-align: center;
     font-size: var(--font-s);
+}
+
+@media (min-width: 1000px) {
+    :root {
+        --font-s: 1.5rem;
+        --font-m: 2.6rem;
+        --font-l: 4rem;
+
+        --spacing-horizontal: 0.5rem;
+        --spacing-vertical: 0.5rem;
+    }
+
+    #calculator {
+        width: 45vw;
+        padding-block: 20px;
+    }
 }
