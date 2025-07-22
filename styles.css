@@ -120,6 +120,8 @@ footer {
         --font-m: 2.6rem;
         --font-l: 4rem;
 
+        --border-weight: 5px;
+
         --spacing-horizontal: 0.5rem;
         --spacing-vertical: 0.5rem;
     }
