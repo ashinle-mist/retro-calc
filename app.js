@@ -159,7 +159,7 @@ async function paste() {
             const pastedNum = clipboardText.trim()
             
             if (isNaN(pastedNum)) {
-                alert(`"${pastedNum}" is not a valid number`);
+                alert(`${pastedNum} is not a valid number`);
                 return null;
             } else {
                 console.log(pastedNum);
