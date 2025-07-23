@@ -193,6 +193,7 @@ function equals(prev, op, curr) {
             result = prev * curr;
             break;
         case '**':
+        case '^':
             result = prev ** curr;
             break;
         case '/':
